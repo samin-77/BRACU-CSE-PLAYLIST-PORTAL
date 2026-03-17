@@ -171,14 +171,6 @@ export const PLAYLISTS = [
     facultyName: 'Mr. Abid Jahan Apon',
     addedAt: '2026-02-02',
   },
-  {
-    course: 'CSE423',
-    playlistUrl:
-      'https://www.youtube.com/playlist?list=PLhRm8DnB_rpZ2ABdaZRTbbUa08CMRIZx_',
-    facultyInitials: 'AJA',
-    facultyName: 'Mr. Abid Jahan Apon',
-    addedAt: '2026-02-02',
-  },
 
 ]
 
