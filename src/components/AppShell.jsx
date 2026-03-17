@@ -45,7 +45,7 @@ function TabLink({ to, children, end }) {
 }
 
 export function AppShell() {
-  const { user, logout } = useAuth()
+  const { user, logout, isAdmin } = useAuth()
   const { theme, toggle } = useDarkMode()
   const navigate = useNavigate()
 
@@ -113,7 +113,7 @@ export function AppShell() {
               </TabLink>
               <TabLink to="/suggest">Submit Suggestion</TabLink>
               <TabLink to="/profile">Profile</TabLink>
-              <TabLink to="/admin/suggestions">Admin</TabLink>
+              {isAdmin && <TabLink to="/admin/suggestions">Admin</TabLink>}
             </motion.nav>
 
             {/* Desktop actions */}

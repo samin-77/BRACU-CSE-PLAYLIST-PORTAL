@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, updateDoc, deleteDoc, query, orderBy, where } from 'firebase/firestore'
+import { collection, doc, getDocs, updateDoc, deleteDoc, query, orderBy, where } from 'firebase/firestore'
 import { useMemo, useState, useEffect } from 'react'
 import { db, firebaseReady } from '../lib/firebase.js'
 import { COURSES } from '../data/courses.js'
@@ -25,40 +25,40 @@ export function AdminSuggestionsPage() {
   }, [])
 
   useEffect(() => {
+    const loadSuggestions = async () => {
+      if (!firebaseReady || !db) {
+        setError('Firestore is not configured.')
+        setLoading(false)
+        return
+      }
+
+      try {
+        setLoading(true)
+        let q = collection(db, SUGGESTIONS_COLLECTION)
+        
+        if (filter !== 'all') {
+          q = query(q, where('status', '==', filter))
+        }
+        
+        q = query(q, orderBy('createdAt', 'desc'))
+        
+        const snapshot = await getDocs(q)
+        const data = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+          createdAt: doc.data().createdAt?.toDate?.() || new Date()
+        }))
+        
+        setSuggestions(data)
+      } catch (e) {
+        setError(e?.message || 'Failed to load suggestions')
+      } finally {
+        setLoading(false)
+      }
+    }
+
     loadSuggestions()
   }, [filter])
-
-  async function loadSuggestions() {
-    if (!firebaseReady || !db) {
-      setError('Firestore is not configured.')
-      setLoading(false)
-      return
-    }
-
-    try {
-      setLoading(true)
-      let q = collection(db, SUGGESTIONS_COLLECTION)
-      
-      if (filter !== 'all') {
-        q = query(q, where('status', '==', filter))
-      }
-      
-      q = query(q, orderBy('createdAt', 'desc'))
-      
-      const snapshot = await getDocs(q)
-      const data = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-        createdAt: doc.data().createdAt?.toDate?.() || new Date()
-      }))
-      
-      setSuggestions(data)
-    } catch (e) {
-      setError(e?.message || 'Failed to load suggestions')
-    } finally {
-      setLoading(false)
-    }
-  }
 
   async function updateSuggestionStatus(suggestionId, status) {
     setUpdating(true)
@@ -72,8 +72,8 @@ export function AdminSuggestionsPage() {
           email: user.email
         }
       })
-      await loadSuggestions()
-      setSelectedSuggestion(null)
+      // Reload suggestions to update the list
+      window.location.reload()
     } catch (e) {
       setError(e?.message || 'Failed to update suggestion')
     } finally {
@@ -87,8 +87,8 @@ export function AdminSuggestionsPage() {
     setUpdating(true)
     try {
       await deleteDoc(doc(db, SUGGESTIONS_COLLECTION, suggestionId))
-      await loadSuggestions()
-      setSelectedSuggestion(null)
+      // Reload suggestions to update the list
+      window.location.reload()
     } catch (e) {
       setError(e?.message || 'Failed to delete suggestion')
     } finally {

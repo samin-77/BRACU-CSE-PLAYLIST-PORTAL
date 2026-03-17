@@ -9,6 +9,7 @@ import {
 import { auth, firebaseReady } from '../lib/firebase.js'
 
 const ALLOWED_DOMAIN = 'g.bracu.ac.bd'
+const ADMIN_EMAIL = 'ishfak.mahbub.samin@g.bracu.ac.bd' // Your admin email
 
 const AuthContext = createContext(null)
 
@@ -120,6 +121,7 @@ export function AuthProvider({ children }) {
       authError,
       loginWithGoogle,
       logout,
+      isAdmin: user?.email === ADMIN_EMAIL,
     }
   }, [user, initializing, authError])
 
