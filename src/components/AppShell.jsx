@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Moon, Sun, LogOut, BookOpen, Github, Twitter, Linkedin, Mail } from 'lucide-react'
+import { Moon, Sun, LogOut, BookOpen, Github, Facebook, Linkedin, Mail, Instagram } from 'lucide-react'
 import clsx from 'clsx'
 import { useAuth } from '../state/AuthContext.jsx'
 import { useDarkMode } from '../hooks/useDarkMode.js'
@@ -210,7 +210,7 @@ export function AppShell() {
               
               <div className="flex items-center gap-3">
                 <motion.a
-                  href="https://github.com"
+                  href="https://github.com/samin-77"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
@@ -220,17 +220,17 @@ export function AppShell() {
                   <Github className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                 </motion.a>
                 <motion.a
-                  href="https://twitter.com"
+                  href="https://www.facebook.com/ishfak.mahbub.samin"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Twitter className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                  <Facebook className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/ishfak-samin-dev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
@@ -240,7 +240,17 @@ export function AppShell() {
                   <Linkedin className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                 </motion.a>
                 <motion.a
-                  href="mailto:contact@example.com"
+                  href="https://www.instagram.com/icepiper._.77/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Instagram className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                </motion.a>
+                <motion.a
+                  href="mailto:ishfak.mahbub.samin@example.com"
                   className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
