@@ -1,5 +1,6 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { useMemo, useState } from 'react'
+import { AlertCircle } from 'lucide-react'
 import { db, firebaseReady } from '../lib/firebase.js'
 import { COURSES } from '../data/courses.js'
 import { validateSuggestion } from '../lib/validators.js'
@@ -33,7 +34,7 @@ export function SuggestPage() {
   const [success, setSuccess] = useState(false)
 
   const errors = useMemo(() => validateSuggestion(values), [values])
-  const canSubmit = Object.keys(errors).length === 0 && !submitting
+  const canSubmit = firebaseReady && Object.keys(errors).length === 0 && !submitting
 
   async function submit() {
     setSuccess(false)
@@ -90,9 +91,20 @@ export function SuggestPage() {
 
       <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950">
         {!firebaseReady ? (
-          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200">
-            Firestore is not configured yet. Add your Firebase keys in <code className="font-mono">.env</code>{' '}
-            to enable submissions.
+          <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200">
+            <div className="flex items-center gap-2 mb-2">
+              <AlertCircle className="w-5 h-5" />
+              <strong>Firebase Not Configured</strong>
+            </div>
+            <p className="mb-3">
+              To enable suggestion submissions, you need to configure Firebase:
+            </p>
+            <ol className="list-decimal list-inside space-y-1 text-xs">
+              <li>Create a Firebase project at <a href="https://console.firebase.google.com" target="_blank" rel="noopener noreferrer" className="underline">Firebase Console</a></li>
+              <li>Copy your Firebase configuration</li>
+              <li>Create a <code className="bg-amber-100 px-1 rounded">.env</code> file with your credentials</li>
+              <li>Follow the format in <code className="bg-amber-100 px-1 rounded">.env.example</code></li>
+            </ol>
           </div>
         ) : null}
         {success ? (
