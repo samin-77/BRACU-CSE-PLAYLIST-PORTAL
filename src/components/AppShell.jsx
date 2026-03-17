@@ -34,10 +34,10 @@ export function AppShell() {
           <div className="flex items-center justify-between gap-3">
             <div>
               <div className="text-base font-semibold tracking-tight">
-                BRAC CSE Playlist Portal
+                BRACU CSE Playlist Portal
               </div>
               <div className="text-xs text-slate-600 dark:text-slate-400">
-                Curated playlists by course & faculty
+                by Ishfak Mahbub Samin
               </div>
             </div>
             <button
