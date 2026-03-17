@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../state/AuthContext.jsx'
+import { firebaseMissingKeys, firebaseReady } from '../lib/firebase.js'
 
 export function LoginPage() {
   const { user, loginWithGoogle, authError } = useAuth()
@@ -48,6 +49,12 @@ export function LoginPage() {
         <div className="mt-4 text-xs text-slate-500 dark:text-slate-500">
           Allowed: <span className="font-mono">@g.bracu.ac.bd</span>
         </div>
+
+        {!firebaseReady ? (
+          <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200">
+            Firebase env missing on this build: <span className="font-mono">{firebaseMissingKeys.join(', ')}</span>
+          </div>
+        ) : null}
       </div>
     </div>
   )

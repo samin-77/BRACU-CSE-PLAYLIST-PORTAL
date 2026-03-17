@@ -13,6 +13,7 @@ const firebaseConfig = {
 
 const requiredKeys = ['apiKey', 'authDomain', 'projectId', 'appId']
 export const firebaseReady = requiredKeys.every((k) => Boolean(firebaseConfig[k]))
+export const firebaseMissingKeys = requiredKeys.filter((k) => !firebaseConfig[k])
 
 let app = null
 if (firebaseReady) {
