@@ -115,6 +115,22 @@ export const PLAYLISTS = [
     facultyName: 'Himaddri Roy',
     addedAt: '2026-02-02',
   },
+  {
+    course: 'CSE321',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL9aZtK5kh5WdJKy1ZuoGp-6R3gn36841-',
+    facultyInitials: 'TRZ',
+    facultyName: 'Md. Tanzim Reza',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE360',
+    playlistUrl:
+      'hhttps://www.youtube.com/playlist?list=PLq1kE3IvmqQ67h-oXuk1dANicJ4YFNBoe',
+    facultyInitials: 'FNK',
+    facultyName: 'Ms. Fairoz Nower Khan',
+    addedAt: '2026-02-02',
+  },
 
 ]
 
