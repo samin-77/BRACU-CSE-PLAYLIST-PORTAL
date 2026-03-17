@@ -5,6 +5,7 @@ import { DashboardPage } from './pages/DashboardPage.jsx'
 import { LoginPage } from './pages/LoginPage.jsx'
 import { ProfilePage } from './pages/ProfilePage.jsx'
 import { SuggestPage } from './pages/SuggestPage.jsx'
+import { AdminSuggestionsPage } from './pages/AdminSuggestionsPage.jsx'
 import { NotFoundPage } from './pages/NotFoundPage.jsx'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<DashboardPage />} />
           <Route path="/suggest" element={<SuggestPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/admin/suggestions" element={<AdminSuggestionsPage />} />
         </Route>
       </Route>
 

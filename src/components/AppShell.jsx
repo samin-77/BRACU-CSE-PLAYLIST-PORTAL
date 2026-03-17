@@ -113,6 +113,7 @@ export function AppShell() {
               </TabLink>
               <TabLink to="/suggest">Submit Suggestion</TabLink>
               <TabLink to="/profile">Profile</TabLink>
+              <TabLink to="/admin/suggestions">Admin</TabLink>
             </motion.nav>
 
             {/* Desktop actions */}
