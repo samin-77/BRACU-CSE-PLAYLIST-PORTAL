@@ -299,6 +299,14 @@ export const PLAYLISTS = [
     facultyName: 'One Academy',
     addedAt: '2026-02-02',
   },
+  {
+    course: 'CSE427',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=4WhwN1yEB3s&list=PLaxLcBlAkWfI32FiENzMzUUsO5fUp-OpP',
+    facultyInitials: 'NWT',
+    facultyName: 'Nowshin Tabassum',
+    addedAt: '2026-02-02',
+  },
 
 ]
 
