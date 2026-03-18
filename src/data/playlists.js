@@ -243,6 +243,62 @@ export const PLAYLISTS = [
     facultyName: 'Ms. Adria Binte Habib',
     addedAt: '2026-02-02',
   },
+  {
+    course: 'CSE461',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLcVvBmM3BkTOU-LDEUUdMl_VN2DPgWrQj',
+    facultyInitials: 'KHR',
+    facultyName: 'Dr. Md. Khalilur Rahman',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE470',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL9aZtK5kh5Wcmeuxc1Jv8EGeakaNnxD3A',
+    facultyInitials: 'ADHN',
+    facultyName: 'Adrita Hossain Nakshi',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE471',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLtQXTSdoymQes9f7x9gdoWXlzbWUf4t5o',
+    facultyInitials: 'MTY',
+    facultyName: 'Modhumonty Das',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE474',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLCh3_NUqW7_JQaKidqDU0eIklFg3piADM',
+    facultyInitials: 'xXx',
+    facultyName: 'External',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE481',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL-lCYwFS3hp2T0MAwY0MmQpWaQF0pmsJv',
+    facultyInitials: 'SHS',
+    facultyName: 'Shadman Shahriar',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE482',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL-lCYwFS3hp1yy4K5o5yFT7BFn5bH1s8m',
+    facultyInitials: 'SHS',
+    facultyName: 'Shadman Shahriar',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE400',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=njv8oLUXtyE',
+    facultyInitials: 'Tutorial',
+    facultyName: 'One Academy',
+    addedAt: '2026-02-02',
+  },
 
 ]
 
