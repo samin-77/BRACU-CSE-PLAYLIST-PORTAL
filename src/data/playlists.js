@@ -171,6 +171,78 @@ export const PLAYLISTS = [
     facultyName: 'Mr. Abid Jahan Apon',
     addedAt: '2026-02-02',
   },
+  {
+    course: 'CSE424',
+    playlistUrl:
+      'https://drive.google.com/drive/folders/1O2r_EGqpWwbc4GPs8Vpchc_83tSeEhRX?fbclid=IwZXh0bgNhZW0CMTAAAR1s8ktcWh4ybZobAJTr2CkoZW7Uc8CVWa18sDdjhBV2pWy7dl4LNlkL-TM_aem_AYtzrPYxkV6n4Y7t8yEPe1E8b7T-neiRfZWsWz61J-MsvB7fN1uLtJvTjEHQ_8botC63S0AJ0-0jJUlU_o-f-U9S',
+    facultyInitials: 'AAR',
+    facultyName: 'Mr. Annajiat Alim Rasel',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE425',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL5IrayslvHiHZZU5jdzp2SEdDOuO2iMMA',
+    facultyInitials: 'MMM',
+    facultyName: 'Moin Mostakim',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE426',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=lTSMpGEvcrY&list=PLBENQsMXh3gxal4lOjpYZFdgcq8jGaVPX',
+    facultyInitials: 'FHZ',
+    facultyName: 'Farhan Feroz',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE428',
+    playlistUrl:
+      'https://www.youtube.com/playlist?app=desktop&list=PLn12JjJn-4YnoOsrIuREbn3BmshSI3lHS',
+    facultyInitials: 'ABA',
+    facultyName: 'Mohammed Abid Abrar',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE437',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLzi4LDrZWYxbDw1iFyiJx1YPSh8GaaBlK',
+    facultyInitials: 'GRA',
+    facultyName: 'Dr. Md. Golam Rabiul Alam',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE440',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLFOIrFMarApSPIwXCgl6Tw-nF4FOkF_X0',
+    facultyInitials: 'FYS',
+    facultyName: 'Dr. Farig Yousuf Sadeque',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE443',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLnAOLIXtu9oMXNSXTnaQxVay6E-diNZNC',
+    facultyInitials: 'SWK',
+    facultyName: 'Dr. Swakkhar Shatabda',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE447',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL5IrayslvHiEiq3CreAT_3u8ujQX4SXmU',
+    facultyInitials: 'MLH',
+    facultyName: 'Monirul Haque',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE460',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLZTczv_dAo9PzNRh-dWEjzlAfNU43szQE',
+    facultyInitials: 'AHB',
+    facultyName: 'Ms. Adria Binte Habib',
+    addedAt: '2026-02-02',
+  },
 
 ]
 
