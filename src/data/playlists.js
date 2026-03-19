@@ -20,10 +20,10 @@ export const PLAYLISTS = [
     addedAt: '2026-03-01',
   },
   {
-    course: 'CSE110 [Python]',
+    course: 'CSE110',
     playlistUrl:
       'https://www.youtube.com/playlist?list=PLvr0Ht-XkB_0V-mjAYlfgk-3VRmFarlzC',
-    facultyInitials: 'TAW',
+    facultyInitials: 'TAW [Python]',
     facultyName: 'Tawhid Anwar',
     addedAt: '2026-03-01',
   },
@@ -36,10 +36,10 @@ export const PLAYLISTS = [
     addedAt: '2026-03-03',
   },
   {
-    course: 'CSE111 [Python]',
+    course: 'CSE111',
     playlistUrl:
       'https://www.youtube.com/playlist?list=PLvr0Ht-XkB_3NAwjutgaG0-62d2yjG6qz',
-    facultyInitials: 'TAW',
+    facultyInitials: 'TAW [Python]',
     facultyName: 'Tawhid Anwar',
     addedAt: '2026-03-03',
   },
@@ -116,6 +116,22 @@ export const PLAYLISTS = [
     addedAt: '2026-01-18',
   },
   {
+    course: 'CSE320',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLZTczv_dAo9OVjUOAh9hHDPF6WxtHvBt5',
+    facultyInitials: 'SAD',
+    facultyName: 'Mr. Salman Sayeed Khan',
+    addedAt: '2026-01-18',
+  },
+  {
+    course: 'CSE320',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=hllSqeKiEyI&list=PLLp-EFUlv2N-2AwDku8xv2gEh8xXXrH_j',
+    facultyInitials: 'AHU',
+    facultyName: 'Md. Ahasanul Alam',
+    addedAt: '2026-01-18',
+  },
+  {
     course: 'CSE250',
     playlistUrl:
       'https://www.youtube.com/watch?v=QWSFu_zZ4kg&list=PLaGWhzUB5BBslAOakUL8ETnMpZntxE-UV',
@@ -140,10 +156,10 @@ export const PLAYLISTS = [
     addedAt: '2026-01-12',
   },
   {
-    course: 'CSE250 [Slide Solution]',
+    course: 'CSE250',
     playlistUrl:
       'https://drive.google.com/drive/folders/1NmcP1McccX7LA89RFzj5k-uNEyNCRg-8',
-    facultyInitials: 'xXx',
+    facultyInitials: 'Slide Solution',
     facultyName: 'External',
     addedAt: '2026-01-12',
   },
@@ -156,11 +172,35 @@ export const PLAYLISTS = [
     addedAt: '2026-01-12',
   },
   {
+    course: 'CSE251',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLgvIXc7KCwucTAca4GIRXBLPtqEMRosOq',
+    facultyInitials: 'ABA',
+    facultyName: 'Mohammed Abid Abrar',
+    addedAt: '2026-01-12',
+  },
+  {
+    course: 'CSE251',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLPf6M92pkd7DR_Wq4QljRFq5bDIS60Apc',
+    facultyInitials: 'AFI',
+    facultyName: 'Afia Mubassira Islam',
+    addedAt: '2026-01-12',
+  },
+  {
     course: 'CSE260',
     playlistUrl:
       'https://www.youtube.com/watch?v=x9T4wdtJdxs&list=PLTlXQu_162QgiaaI7zrjIH8t1U3ON30ow',
     facultyInitials: 'DZK',
     facultyName: 'Dewan Ziaul Karim',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE260',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLCh3_NUqW7_IKB3PUO9ejeQVujN0SNFtB',
+    facultyInitials: 'xXx',
+    facultyName: 'External',
     addedAt: '2026-02-02',
   },
   {
@@ -185,6 +225,22 @@ export const PLAYLISTS = [
       'https://www.youtube.com/watch?v=0m4rFvCj23U&list=PLitI121Py8yeTot0QlYZep7IFW2prGu27',
     facultyInitials: 'NLH',
     facultyName: 'Niloy Farhan',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE330',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLtQXTSdoymQcFoBLN1siztEU1hIkQxVQY',
+    facultyInitials: 'RRH',
+    facultyName: 'Rafeed Rahman',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE330',
+    playlistUrl:
+      'https://drive.google.com/drive/folders/17-QizJALELypGv67sxp2jn6XnVds3Hvx',
+    facultyInitials: 'AQU',
+    facultyName: 'Mr. Md. Aquib Azmain',
     addedAt: '2026-02-02',
   },
   {
@@ -225,6 +281,30 @@ export const PLAYLISTS = [
       'https://www.youtube.com/playlist?list=PL9aZtK5kh5WdJKy1ZuoGp-6R3gn36841-',
     facultyInitials: 'TRZ',
     facultyName: 'Md. Tanzim Reza',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE321',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLSK_kYNPLtxTV1WV6G-B3sphdmwyZBm4I',
+    facultyInitials: 'NTR',
+    facultyName: 'Ms. Narzu Tarannum',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE321',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLlQG2qz3jVRYMFW4NYMKkFqWd1v8H6Mx6',
+    facultyInitials: 'BDH',
+    facultyName: 'Mohammad Badrul Hossain',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE321',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL4iTVKzFqrcOYQ_Cu4IIcUgLygzmUvsLG',
+    facultyInitials: 'FLA',
+    facultyName: 'Md. Faisal Ahmed',
     addedAt: '2026-02-02',
   },
   {
@@ -383,7 +463,7 @@ export const PLAYLISTS = [
     course: 'CSE481',
     playlistUrl:
       'https://www.youtube.com/playlist?list=PL-lCYwFS3hp2T0MAwY0MmQpWaQF0pmsJv',
-    facultyInitials: 'SHS',
+    facultyInitials: 'SDS',
     facultyName: 'Shadman Shahriar',
     addedAt: '2026-02-02',
   },
