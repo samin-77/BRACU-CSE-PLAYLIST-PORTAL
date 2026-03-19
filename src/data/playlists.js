@@ -6,6 +6,14 @@ export const PLAYLISTS = [
   {
     course: 'CSE110',
     playlistUrl:
+      'https://www.youtube.com/playlist?list=PLtQXTSdoymQfo173BJeLyMZ9KlI7tORwW',
+    facultyInitials: 'MSI',
+    facultyName: 'Md. Saiful Islam',
+    addedAt: '2026-03-01',
+  },
+  {
+    course: 'CSE110',
+    playlistUrl:
       'https://www.youtube.com/watch?v=hBg3njn56Z0&list=PLvr0Ht-XkB_0KC2-N3hv0V3ib-Z6wKkAy',
     facultyInitials: 'TAW',
     facultyName: 'Tawhid Anwar',
