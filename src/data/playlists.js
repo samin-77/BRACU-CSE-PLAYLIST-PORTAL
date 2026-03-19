@@ -20,11 +20,35 @@ export const PLAYLISTS = [
     addedAt: '2026-03-01',
   },
   {
+    course: 'CSE110 [Python]',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLvr0Ht-XkB_0V-mjAYlfgk-3VRmFarlzC',
+    facultyInitials: 'TAW',
+    facultyName: 'Tawhid Anwar',
+    addedAt: '2026-03-01',
+  },
+  {
     course: 'CSE111',
     playlistUrl:
       'https://www.youtube.com/watch?v=MNTvxGCEvQs&list=PLvr0Ht-XkB_3QPWYBje6NqEs3QLj_0vpf',
     facultyInitials: 'TAW',
     facultyName: 'Tawhid Anwar',
+    addedAt: '2026-03-03',
+  },
+  {
+    course: 'CSE111 [Python]',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLvr0Ht-XkB_3NAwjutgaG0-62d2yjG6qz',
+    facultyInitials: 'TAW',
+    facultyName: 'Tawhid Anwar',
+    addedAt: '2026-03-03',
+  },
+  {
+    course: 'CSE111',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLaVWjQSl4OrjCnQU00ES3CnimhS0Ii9Ne',
+    facultyInitials: 'SAD',
+    facultyName: 'Mr. Salman Sayeed Khan',
     addedAt: '2026-03-03',
   },
   {
@@ -36,11 +60,51 @@ export const PLAYLISTS = [
     addedAt: '2026-02-25',
   },
   {
+    course: 'CSE220',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL0OB0V4vwoYtKSYv47QhrsDCtv0mxOcvg',
+    facultyInitials: 'RAK',
+    facultyName: 'Rubayat Ahmed Khan',
+    addedAt: '2026-02-25',
+  },
+  {
+    course: 'CSE220',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLD_RsOa29eqUqd86rzrS09HaqguU9o7z9',
+    facultyInitials: 'MTY',
+    facultyName: 'Modhumonty Das',
+    addedAt: '2026-02-25',
+  },
+  {
+    course: 'CSE220',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=H_ESfKidJAI&list=PLBu7-uQsI3zLdlToPKm6Yzb76SlavoPBb',
+    facultyInitials: 'SFF',
+    facultyName: 'S. M. FARAH AL FAHIM',
+    addedAt: '2026-02-25',
+  },
+  {
     course: 'CSE221',
     playlistUrl:
       'https://www.youtube.com/watch?v=54GtemOCtzw&list=PLYv5ovgT8QC4r4TOgWCE-Ps-LXiLZGz3J',
     facultyInitials: 'MUNR',
     facultyName: 'A B M Muntasir Rahman',
+    addedAt: '2026-02-25',
+  },
+  {
+    course: 'CSE221',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLgU-6-TtNPAzpauVSPWpKFbmu5Rbc2dEQ',
+    facultyInitials: 'HFN',
+    facultyName: 'Sheikh Araf Noshin',
+    addedAt: '2026-02-25',
+  },
+  {
+    course: 'CSE221',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLCh3_NUqW7_LUEKMB6VGnhUveo7k70t4M',
+    facultyInitials: 'xXx',
+    facultyName: 'External',
     addedAt: '2026-02-25',
   },
   {
@@ -57,6 +121,30 @@ export const PLAYLISTS = [
       'https://www.youtube.com/watch?v=QWSFu_zZ4kg&list=PLaGWhzUB5BBslAOakUL8ETnMpZntxE-UV',
     facultyInitials: 'PDS',
     facultyName: 'Purbayan Das',
+    addedAt: '2026-01-12',
+  },
+  {
+    course: 'CSE250',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL-lCYwFS3hp0hbnUd8-FzWxfQzvqt-d5w',
+    facultyInitials: 'SDS',
+    facultyName: 'Mr. Shadman Shahriar',
+    addedAt: '2026-01-12',
+  },
+  {
+    course: 'CSE250',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLPfbpzAKHDr0jvyTYVA0ceb1_gJZmTIlE',
+    facultyInitials: 'SDQ',
+    facultyName: 'Md. Saiful Bari Siddiqui',
+    addedAt: '2026-01-12',
+  },
+  {
+    course: 'CSE250 [Slide Solution]',
+    playlistUrl:
+      'https://drive.google.com/drive/folders/1NmcP1McccX7LA89RFzj5k-uNEyNCRg-8',
+    facultyInitials: 'xXx',
+    facultyName: 'External',
     addedAt: '2026-01-12',
   },
   {
@@ -81,6 +169,14 @@ export const PLAYLISTS = [
       'https://www.youtube.com/@farhanferoz8226',
     facultyInitials: 'FHZ',
     facultyName: 'Farhan Feroz',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE230',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLCh3_NUqW7_IpBYjcyBix7edgUsT7wWbP',
+    facultyInitials: 'TSM',
+    facultyName: 'Mr. Mirza Md. Tanjim Shorif Mugdho',
     addedAt: '2026-02-02',
   },
   {
