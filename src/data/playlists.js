@@ -252,11 +252,67 @@ export const PLAYLISTS = [
     addedAt: '2026-02-02',
   },
   {
+    course: 'CSE331',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLib4rFadvfrckeiUjBjYWnxtyUmW5-X8r',
+    facultyInitials: 'KKP',
+    facultyName: 'Kabbya Kantam Patwary',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE331',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLaVWjQSl4OrjwIA_629AbCDKZPyN2QOCp',
+    facultyInitials: 'MHB',
+    facultyName: 'Mursalin Habib',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE331',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=hnJ2mSAwtuo&list=PLS4PMF-5XdT_RrPxM0_y78w4pGU0fhVua',
+    facultyInitials: 'FDM',
+    facultyName: 'Md. Fardin Rahman Ami',
+    addedAt: '2026-02-02',
+  },
+  {
     course: 'CSE340',
     playlistUrl:
       'https://www.youtube.com/watch?v=ID0pE6BZOB8&list=PLKyFAP_ydM17VPOp58yPMBTWkG8__Kwg7&ab_channel=ParthaBhoumik',
     facultyInitials: 'PBK',
     facultyName: 'Partha Bhoumik',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE340',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLikUdyNwudnM4rng2QagbM-oSnJXxSLaP',
+    facultyInitials: 'NZN',
+    facultyName: 'Mr. Nabuat Zaman Nahim',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE340',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLsheiwzPKqWd_I5uRzJIDMhfYJD35WZY5',
+    facultyInitials: 'FNK',
+    facultyName: 'Fairoz Nower Khan',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE340',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=DCNaYPz7Sw0&list=PLZTczv_dAo9MbaqJHQNi8ki9th-oOkI_8',
+    facultyInitials: 'AFA',
+    facultyName: 'Afia Fairoose Abedin',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE340',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=tk2QFVj6yX8&list=PLb4Lk-UmWox593BNTPSevESJgO5jS3FEZ',
+    facultyInitials: 'xXx',
+    facultyName: 'One Academy',
     addedAt: '2026-02-02',
   },
   {
@@ -268,11 +324,59 @@ export const PLAYLISTS = [
     addedAt: '2026-02-02',
   },
   {
+    course: 'CSE341',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL2ETCwNgERAIJ7wC9rZrr0ZIppg8K8u_T',
+    facultyInitials: 'LHK',
+    facultyName: 'Labib Hasan Khan',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE341',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLeuWnqFb539y94idY91O89-oCFz4e4B9N',
+    facultyInitials: 'MAO',
+    facultyName: 'Mirza Abdullah Al Noman',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE341',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=e2tqBSIPA5c&list=PLFLM6h6rliBq9ZgIZLa_2SAgnqO76jD_w',
+    facultyInitials: 'HBN',
+    facultyName: 'Mr. Hamim Ibne Nasim',
+    addedAt: '2026-02-02',
+  },
+  {
     course: 'CSE350',
     playlistUrl:
       'https://docs.google.com/document/d/1fOEMVM9hlIeNKMB6nBvefxJ3CxKLJvpOARNUkF_xE38/edit?tab=t.0#heading=h.nj23sjpj5u97',
     facultyInitials: 'HRY',
     facultyName: 'Himaddri Roy',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE350',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=yQ8kNAmR2EQ&list=PLFLM6h6rliBo39mRXFiqxJqb3FqsBT7Co',
+    facultyInitials: 'SZZ',
+    facultyName: 'Sazzadul Islam',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE350',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLnCXYqYTJMTvyYHdzhAd3uWGQD9-RhX-6',
+    facultyInitials: 'SNW',
+    facultyName: 'Shahnewaz Ahmed',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE350',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLLpSkO6bcke6ovLtXTT7xUU1P8Gk1qT1q',
+    facultyInitials: 'NAH',
+    facultyName: 'Nahin Islam Toma',
     addedAt: '2026-02-02',
   },
   {
@@ -316,11 +420,43 @@ export const PLAYLISTS = [
     addedAt: '2026-02-02',
   },
   {
+    course: 'CSE360',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL5IrayslvHiFz3p9soLwtlxDyT6KKCuDu',
+    facultyInitials: 'TIK',
+    facultyName: 'Mr. Taufiqul Islam Khan',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE360',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PL8I0kbow2q8HgpBEruOmyFA63ejc-QHaq',
+    facultyInitials: 'SRU',
+    facultyName: 'Mr. Shakir Rouf',
+    addedAt: '2026-02-02',
+  },
+  {
     course: 'CSE370',
     playlistUrl:
       'https://www.youtube.com/playlist?list=PLbrkVe8jT_YwMhF4TWw1Q9ETFrUIYjOPM',
     facultyInitials: 'NNC',
     facultyName: 'Najeefa Nikhat Choudhury',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE370',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=-h8vjQ5UVrg&list=PLnGVQFlQATU0tnVup6ky45DWmDGA1oN0T',
+    facultyInitials: 'RBR',
+    facultyName: 'Rakin Bin Rabbani',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE370',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=vrvPznlhmDs&list=PL7oKIPF7ZnjYUzYGM0g-RSXuPqL6fhvo6',
+    facultyInitials: 'MTT',
+    facultyName: 'Mr. Md. Tanvir Arafat',
     addedAt: '2026-02-02',
   },
   {
@@ -332,11 +468,51 @@ export const PLAYLISTS = [
     addedAt: '2026-02-02',
   },
   {
+    course: 'CSE420',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLtQXTSdoymQe8yIPbiwFCBwX2yLy8eR9X',
+    facultyInitials: 'SRF',
+    facultyName: 'Ms. Syeda Ramisa Fariha',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE420',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=SdzQzgE_L1Y&list=PLELzlZoIF6ebkp7_SFKGyHFy_vm0r0LVe',
+    facultyInitials: 'MNY',
+    facultyName: 'Dr. Muhammad Nur Yanhaona',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE420',
+    playlistUrl:
+      'https://www.youtube.com/@sukarnasarker',
+    facultyInitials: 'SUE',
+    facultyName: 'Sukarna Sarker',
+    addedAt: '2026-02-02',
+  },
+  {
     course: 'CSE421',
     playlistUrl:
       'https://www.youtube.com/playlist?list=PLJh97ekrGHeKnnsQqBmP1gG4Pki1OLejM',
     facultyInitials: 'ARF',
     facultyName: 'Arif Shakil',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE421',
+    playlistUrl:
+      'https://drive.google.com/drive/folders/1AbnrDSFyytekU5kBRNobpNwtixDz82Jf',
+    facultyInitials: 'SKZ',
+    facultyName: 'Dr. Sadia Hamid Kazi',
+    addedAt: '2026-02-02',
+  },
+  {
+    course: 'CSE421',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLWCaK_oHHOY5rpaLXFpEm2k3PONxIGpy1',
+    facultyInitials: 'HQU',
+    facultyName: 'Ms. Samiha Haque',
     addedAt: '2026-02-02',
   },
   {
