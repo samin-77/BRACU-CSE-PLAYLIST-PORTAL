@@ -93,12 +93,15 @@ export function LoginPage() {
                   setLoading(false)
                 }
               }}
-              className="w-full relative group"
+              className="w-full relative group overflow-hidden"
               whileHover={{ scale: loading ? 1 : 1.02 }}
               whileTap={{ scale: loading ? 1 : 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
+              {/* Background gradient */}
               <div className={`absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg transition-all duration-300 ${loading ? 'opacity-70' : 'opacity-50 group-hover:opacity-70'}`} />
+              
+              {/* Button content */}
               <div className={`relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-white font-semibold shadow-lg flex items-center justify-center gap-3 transition-all duration-300 ${loading ? 'opacity-90' : ''} disabled:opacity-60 disabled:cursor-not-allowed`}>
                 {loading ? (
                   <>
@@ -116,17 +119,6 @@ export function LoginPage() {
                   </>
                 )}
               </div>
-              
-              {/* Loading overlay for better feedback */}
-              {loading && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center"
-                >
-                  <div className="w-8 h-8 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                </motion.div>
-              )}
             </motion.button>
 
             {/* Info text */}
