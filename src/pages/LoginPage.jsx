@@ -75,51 +75,69 @@ export function LoginPage() {
             ) : null}
 
             {/* Login button */}
-            <motion.button
-              type="button"
-              disabled={loading}
-              onClick={async () => {
-                // Immediate visual feedback
-                setLoading(true)
-                setError(null)
-                
-                try {
-                  // Add a small delay to ensure loading state is visible
-                  await new Promise(resolve => setTimeout(resolve, 100))
-                  await loginWithGoogle()
-                } catch (e) {
-                  setError(e?.message || 'Login failed. Please try again.')
-                } finally {
-                  setLoading(false)
-                }
-              }}
-              className="w-full relative group overflow-hidden"
-              whileHover={{ scale: loading ? 1 : 1.02 }}
-              whileTap={{ scale: loading ? 1 : 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              {/* Background gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg transition-all duration-300 ${loading ? 'opacity-70' : 'opacity-50 group-hover:opacity-70'}`} />
-              
-              {/* Button content */}
-              <div className={`relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-white font-semibold shadow-lg flex items-center justify-center gap-3 transition-all duration-300 ${loading ? 'opacity-90' : ''} disabled:opacity-60 disabled:cursor-not-allowed`}>
-                {loading ? (
-                  <>
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                    />
-                    <span className="text-sm sm:text-base">Redirecting to Google…</span>
-                  </>
-                ) : (
-                  <>
-                    <Chrome className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className="text-sm sm:text-base">Continue with Google</span>
-                  </>
-                )}
-              </div>
-            </motion.button>
+            <div className="relative w-full">
+              <motion.div
+                className="w-full"
+                whileHover={{ scale: loading ? 1 : 1.02 }}
+                whileTap={{ scale: loading ? 1 : 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
+                <button
+                  type="button"
+                  disabled={loading}
+                  onClick={async () => {
+                    // Immediate visual feedback
+                    setLoading(true)
+                    setError(null)
+                    
+                    try {
+                      // Add a small delay to ensure loading state is visible
+                      await new Promise(resolve => setTimeout(resolve, 100))
+                      await loginWithGoogle()
+                    } catch (e) {
+                      setError(e?.message || 'Login failed. Please try again.')
+                    } finally {
+                      setLoading(false)
+                    }
+                  }}
+                  className="w-full relative overflow-hidden group"
+                >
+                  {/* Background gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg transition-all duration-300 ${loading ? 'opacity-70' : 'opacity-50 group-hover:opacity-70'}`} />
+                  
+                  {/* Button content */}
+                  <div className={`relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-white font-semibold shadow-lg flex items-center justify-center gap-3 transition-all duration-300 ${loading ? 'opacity-90' : ''} disabled:opacity-60 disabled:cursor-not-allowed`}>
+                    {loading ? (
+                      <>
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+                          className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                        />
+                        <span className="text-sm sm:text-base">Redirecting to Google…</span>
+                      </>
+                    ) : (
+                      <>
+                        <Chrome className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span className="text-sm sm:text-base">Continue with Google</span>
+                      </>
+                    )}
+                  </div>
+                </button>
+              </motion.div>
+
+              {/* Loading indicator outside button */}
+              {loading && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="mt-4 flex items-center justify-center gap-2 text-blue-200"
+                >
+                  <div className="w-6 h-6 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+                  <span className="text-sm">Connecting to Google...</span>
+                </motion.div>
+              )}
+            </div>
 
             {/* Info text */}
             <motion.div
