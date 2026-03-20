@@ -17,10 +17,10 @@ export function LoginPage() {
   if (user) return <Navigate to={from} replace />
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 px-4 py-8">
       <ParticleBackground />
       
-      <div className="relative z-10 w-full max-w-md px-6">
+      <div className="relative z-10 w-full max-w-md">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,10 +30,10 @@ export function LoginPage() {
           {/* Glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-xl" />
           
-          <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
+          <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl">
             {/* Logo and title */}
             <motion.div 
-              className="text-center mb-8"
+              className="text-center mb-6 sm:mb-8"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -46,12 +46,12 @@ export function LoginPage() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-50" />
                   <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full">
-                    <BookOpen className="w-8 h-8 text-white" />
+                    <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                 </motion.div>
               </div>
               
-              <h1 className="text-2xl font-bold text-white mb-2">
+              <h1 className="text-xl sm:text-2xl font-bold text-white mb-2">
                 BRAC CSE Playlist Portal
               </h1>
               <p className="text-blue-200 text-sm flex items-center justify-center gap-1">
@@ -94,7 +94,7 @@ export function LoginPage() {
               whileTap={{ scale: 0.98 }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur-lg opacity-50 group-hover:opacity-70 transition-opacity" />
-              <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl px-6 py-4 text-white font-semibold shadow-lg flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
+              <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl px-4 sm:px-6 py-3 sm:py-4 text-white font-semibold shadow-lg flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
                 {loading ? (
                   <>
                     <motion.div
@@ -102,12 +102,12 @@ export function LoginPage() {
                       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
                     />
-                    Signing in…
+                    <span className="text-sm sm:text-base">Signing in…</span>
                   </>
                 ) : (
                   <>
-                    <Chrome className="w-5 h-5" />
-                    Continue with Google
+                    <Chrome className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span className="text-sm sm:text-base">Continue with Google</span>
                   </>
                 )}
               </div>
@@ -118,7 +118,7 @@ export function LoginPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="mt-6 text-center"
+              className="mt-4 sm:mt-6 text-center"
             >
               <p className="text-blue-200 text-xs mb-2">
                 Secure authentication powered by Google

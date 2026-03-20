@@ -13,7 +13,7 @@ function TabLink({ to, children, end }) {
       end={end}
       className={({ isActive }) =>
         clsx(
-          'relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 overflow-hidden group',
+          'relative px-2 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 overflow-hidden group whitespace-nowrap',
           isActive
             ? 'text-white'
             : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white',
@@ -103,7 +103,7 @@ export function AppShell() {
 
             {/* Navigation */}
             <motion.nav 
-              className="flex items-center gap-2 rounded-xl border border-white/20 bg-white/50 backdrop-blur-sm p-1 shadow-lg dark:border-slate-800/20 dark:bg-slate-900/50 overflow-x-auto"
+              className="flex items-center gap-1 sm:gap-2 rounded-xl border border-white/20 bg-white/50 backdrop-blur-sm p-1 shadow-lg dark:border-slate-800/20 dark:bg-slate-900/50 overflow-x-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -111,7 +111,7 @@ export function AppShell() {
               <TabLink to="/" end>
                 Dashboard
               </TabLink>
-              <TabLink to="/suggest">Submit Suggestion</TabLink>
+              <TabLink to="/suggest">Suggest</TabLink>
               <TabLink to="/profile">Profile</TabLink>
               {isAdmin && <TabLink to="/admin/suggestions">Admin</TabLink>}
             </motion.nav>

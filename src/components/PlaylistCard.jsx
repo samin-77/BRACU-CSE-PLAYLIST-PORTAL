@@ -41,7 +41,7 @@ export function PlaylistCard({ item, videoCount }) {
       target="_blank"
       rel="noreferrer"
       className={clsx(
-        'group block rounded-2xl border border-white/20 bg-white/40 backdrop-blur-sm p-5 shadow-lg transition-all duration-300',
+        'group block rounded-2xl border border-white/20 bg-white/40 backdrop-blur-sm p-4 sm:p-5 shadow-lg transition-all duration-300',
         'hover:-translate-y-1 hover:shadow-2xl hover:border-white/30 hover:bg-white/60',
         'focus-visible:ring-4 focus-visible:ring-blue-500/30',
         'dark:border-slate-800/20 dark:bg-slate-900/40 dark:hover:border-slate-700/30 dark:hover:bg-slate-900/60',
@@ -53,8 +53,8 @@ export function PlaylistCard({ item, videoCount }) {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
     >
-      <div className="flex items-start gap-4">
-        <div className="relative h-20 w-36 shrink-0 overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
+      <div className="flex items-start gap-3 sm:gap-4">
+        <div className="relative h-16 w-28 sm:h-20 sm:w-36 shrink-0 overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
           {thumb ? (
             <>
               <img
@@ -71,13 +71,13 @@ export function PlaylistCard({ item, videoCount }) {
                 transition={{ duration: 0.2 }}
               >
                 <div className="rounded-full bg-white/90 p-2 backdrop-blur-sm">
-                  <Play className="w-4 h-4 text-slate-900" />
+                  <Play className="w-3 h-3 sm:w-4 sm:h-4 text-slate-900" />
                 </div>
               </motion.div>
             </>
           ) : (
             <div className={`h-full w-full bg-gradient-to-br ${getDummyThumbnail(item.course)} flex items-center justify-center`}>
-              <BookOpen className="w-8 h-8 text-white/80" />
+              <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-white/80" />
             </div>
           )}
         </div>
@@ -85,7 +85,7 @@ export function PlaylistCard({ item, videoCount }) {
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
             <div
-              className="min-w-0 truncate text-[15px] font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent dark:from-white dark:to-slate-300"
+              className="min-w-0 truncate text-[13px] sm:text-[15px] font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent dark:from-white dark:to-slate-300"
               title={item.title ?? 'Open playlist'}
             >
               {item.title ?? `${item.course} playlist`}
@@ -94,15 +94,15 @@ export function PlaylistCard({ item, videoCount }) {
               <motion.span
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-2 py-0.5 text-[11px] font-semibold text-white shadow-lg"
+                className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-2 py-0.5 text-[10px] sm:text-[11px] font-semibold text-white shadow-lg"
               >
-                <Sparkles className="w-3 h-3" />
+                <Sparkles className="w-2 h-2 sm:w-3 sm:h-3" />
                 New
               </motion.span>
             ) : null}
           </div>
 
-          <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+          <div className="mt-1 sm:mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm">
             <span
               className={clsx(
                 'inline-flex items-center rounded-lg border px-2 py-1 font-mono text-xs font-semibold',

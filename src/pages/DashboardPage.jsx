@@ -147,17 +147,17 @@ export function DashboardPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search playlists, courses, or faculty..."
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-white/20 bg-white/60 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-slate-800/20 dark:bg-slate-900/60 dark:text-slate-100"
+                className="w-full pl-10 pr-4 py-3 text-sm sm:text-base rounded-xl border border-white/20 bg-white/60 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-slate-800/20 dark:bg-slate-900/60 dark:text-slate-100"
               />
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <div className="relative">
                 <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <select
                   value={courseFilter}
                   onChange={(e) => setCourseFilter(e.target.value)}
-                  className="appearance-none pl-10 pr-8 py-3 rounded-xl border border-white/20 bg-white/60 backdrop-blur-sm text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-slate-800/20 dark:bg-slate-900/60 dark:text-slate-100"
+                  className="appearance-none pl-10 pr-8 py-3 text-sm sm:text-base rounded-xl border border-white/20 bg-white/60 backdrop-blur-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-slate-800/20 dark:bg-slate-900/60 dark:text-slate-100"
                 >
                   <option value="All">All courses</option>
                   {courses.map((c) => (
@@ -173,7 +173,7 @@ export function DashboardPage() {
                 <select
                   value={facultyFilter}
                   onChange={(e) => setFacultyFilter(e.target.value)}
-                  className="appearance-none pl-10 pr-8 py-3 rounded-xl border border-white/20 bg-white/60 backdrop-blur-sm text-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-slate-800/20 dark:bg-slate-900/60 dark:text-slate-100"
+                  className="appearance-none pl-10 pr-8 py-3 text-sm sm:text-base rounded-xl border border-white/20 bg-white/60 backdrop-blur-sm text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-slate-800/20 dark:bg-slate-900/60 dark:text-slate-100"
                 >
                   <option value="All">All faculty</option>
                   {faculties.map((f) => (
@@ -187,7 +187,7 @@ export function DashboardPage() {
               {countsEnabled ? (
                 <div className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/60 backdrop-blur-sm border border-white/20 dark:border-slate-800/20 dark:bg-slate-900/60">
                   {countsLoading ? <Spinner /> : <PlayCircle className="w-4 h-4 text-blue-500" />}
-                  <span className="text-sm text-slate-600 dark:text-slate-400">Video counts</span>
+                  <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Video counts</span>
                 </div>
               ) : null}
             </div>
@@ -220,7 +220,7 @@ export function DashboardPage() {
         </motion.div>
       ) : (
         <motion.div
-          className="grid grid-cols-1 gap-6 lg:grid-cols-2"
+          className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ staggerChildren: 0.1 }}
@@ -228,25 +228,22 @@ export function DashboardPage() {
           {grouped.map(([course, items], index) => (
             <motion.section
               key={course}
-              className="space-y-4 border border-white/20 bg-white/40 backdrop-blur-sm rounded-3xl p-6 shadow-xl dark:border-slate-800/20 dark:bg-slate-900/40"
+              className="space-y-4 border border-white/20 bg-white/40 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl dark:border-slate-800/20 dark:bg-slate-900/40"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="flex items-center justify-between gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="min-w-0">
-                  <h2 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <h2 className="text-base sm:text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {course}
                   </h2>
-                  <div className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                  <div className="mt-0.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                     {courseTitleByCode.get(course) ?? ''}
                   </div>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30">
-                  <PlayCircle className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-                  <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
-                    {items.length} playlist{items.length === 1 ? '' : 's'}
-                  </span>
+                <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                  {items.length} playlist{items.length === 1 ? '' : 's'}
                 </div>
               </div>
 
