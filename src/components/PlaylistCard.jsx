@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Play, Clock, Sparkles } from 'lucide-react'
+import { Play, Clock, Sparkles, BookOpen } from 'lucide-react'
 import clsx from 'clsx'
 import { parseYoutubeUrl, getYoutubeThumbnailUrl } from '../lib/youtube.js'
 
@@ -9,6 +9,25 @@ function isNew(addedAt) {
   if (Number.isNaN(added.getTime())) return false
   const days = (Date.now() - added.getTime()) / (1000 * 60 * 60 * 24)
   return days <= 21
+}
+
+// Generate a consistent dummy thumbnail based on course code
+function getDummyThumbnail(course) {
+  const colors = [
+    'from-blue-400 to-blue-600',
+    'from-purple-400 to-purple-600',
+    'from-green-400 to-green-600',
+    'from-red-400 to-red-600',
+    'from-indigo-400 to-indigo-600',
+    'from-pink-400 to-pink-600',
+    'from-yellow-400 to-yellow-600',
+    'from-teal-400 to-teal-600',
+  ]
+  
+  const hash = course.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+  const colorIndex = hash % colors.length
+  
+  return colors[colorIndex]
 }
 
 export function PlaylistCard({ item, videoCount }) {
@@ -56,7 +75,11 @@ export function PlaylistCard({ item, videoCount }) {
                 </div>
               </motion.div>
             </>
-          ) : null}
+          ) : (
+            <div className={`h-full w-full bg-gradient-to-br ${getDummyThumbnail(item.course)} flex items-center justify-center`}>
+              <BookOpen className="w-8 h-8 text-white/80" />
+            </div>
+          )}
         </div>
 
         <div className="min-w-0 flex-1">
