@@ -84,6 +84,14 @@ export const PLAYLISTS = [
     addedAt: '2026-02-25',
   },
   {
+    course: 'CSE220',
+    playlistUrl:
+      'https://www.youtube.com/playlist?list=PLBJgv5EOl28KRGTJHjREcFM9z0p5Ewxis',
+    facultyInitials: 'Student Made',
+    facultyName: 'Ayhan Arash Tasin',
+    addedAt: '2026-02-25',
+  },
+  {
     course: 'CSE221',
     playlistUrl:
       'https://www.youtube.com/watch?v=54GtemOCtzw&list=PLYv5ovgT8QC4r4TOgWCE-Ps-LXiLZGz3J',
@@ -97,6 +105,14 @@ export const PLAYLISTS = [
       'https://www.youtube.com/playlist?list=PLgU-6-TtNPAzpauVSPWpKFbmu5Rbc2dEQ',
     facultyInitials: 'HFN',
     facultyName: 'Sheikh Araf Noshin',
+    addedAt: '2026-02-25',
+  },
+  {
+    course: 'CSE221',
+    playlistUrl:
+      'https://www.youtube.com/watch?v=_qwJZ4BHPWI&list=PLOCZNXBOi9IF7CGzlvnOB3L9s2uH-mH4O',
+    facultyInitials: 'AYO',
+    facultyName: 'Ariyan Hossain',
     addedAt: '2026-02-25',
   },
   {
