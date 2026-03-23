@@ -1,4 +1,4 @@
-import { collection, doc, getDocs, updateDoc, deleteDoc, query, orderBy, where } from 'firebase/firestore'
+import { collection, doc, getDocs, updateDoc, deleteDoc, addDoc, query as firebaseQuery, orderBy, where } from 'firebase/firestore'
 import { useMemo, useState, useEffect } from 'react'
 import { db, firebaseReady } from '../lib/firebase.js'
 import { COURSES } from '../data/courses.js'
@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import { Check, X, Eye, Trash2, ExternalLink, Clock, CheckCircle, XCircle, AlertCircle, Users, Calendar, Filter, Search } from 'lucide-react'
 
 const SUGGESTIONS_COLLECTION = 'playlistSuggestions'
+const APPROVED_PLAYLISTS_COLLECTION = 'approvedPlaylists'
 
 export function AdminSuggestionsPage() {
   const { user } = useAuth()
@@ -37,10 +38,10 @@ export function AdminSuggestionsPage() {
         let q = collection(db, SUGGESTIONS_COLLECTION)
         
         if (filter !== 'all') {
-          q = query(q, where('status', '==', filter))
+          q = firebaseQuery(q, where('status', '==', filter))
         }
         
-        q = query(q, orderBy('createdAt', 'desc'))
+        q = firebaseQuery(q, orderBy('createdAt', 'desc'))
         
         const snapshot = await getDocs(q)
         const data = snapshot.docs.map(doc => ({
@@ -63,6 +64,10 @@ export function AdminSuggestionsPage() {
   async function updateSuggestionStatus(suggestionId, status) {
     setUpdating(true)
     try {
+      // Get the suggestion data before updating
+      const suggestion = suggestions.find(s => s.id === suggestionId)
+      
+      // Update the suggestion status
       await updateDoc(doc(db, SUGGESTIONS_COLLECTION, suggestionId), {
         status,
         reviewedAt: new Date(),
@@ -72,6 +77,35 @@ export function AdminSuggestionsPage() {
           email: user.email
         }
       })
+
+      // If approved, automatically add to approved playlists collection
+      if (status === 'approved' && suggestion) {
+        console.log('🔄 Adding approved playlist to Firebase...', suggestion)
+        
+        try {
+          const docRef = await addDoc(collection(db, APPROVED_PLAYLISTS_COLLECTION), {
+            course: suggestion.course,
+            playlistUrl: suggestion.playlistUrl,
+            facultyInitials: suggestion.facultyInitials,
+            facultyName: suggestion.facultyName,
+            addedAt: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD
+            originalSuggestionId: suggestionId,
+            approvedBy: {
+              uid: user.uid,
+              name: user.displayName,
+              email: user.email
+            },
+            approvedAt: new Date()
+          })
+          
+          console.log(`✅ Playlist for ${suggestion.course} by ${suggestion.facultyName} automatically added to dashboard!`)
+          console.log('📝 Document ID:', docRef.id)
+        } catch (error) {
+          console.error('❌ Error adding playlist to approvedPlaylists:', error)
+          throw error
+        }
+      }
+
       // Reload suggestions to update the list
       window.location.reload()
     } catch (e) {
@@ -91,6 +125,21 @@ export function AdminSuggestionsPage() {
       window.location.reload()
     } catch (e) {
       setError(e?.message || 'Failed to delete suggestion')
+    } finally {
+      setUpdating(false)
+    }
+  }
+
+  async function deleteApprovedPlaylist(playlistId) {
+    if (!confirm('Are you sure you want to delete this approved playlist?')) return
+    
+    setUpdating(true)
+    try {
+      await deleteDoc(doc(db, APPROVED_PLAYLISTS_COLLECTION, playlistId))
+      alert('✅ Approved playlist deleted successfully!')
+      window.location.reload()
+    } catch (e) {
+      setError(e?.message || 'Failed to delete approved playlist')
     } finally {
       setUpdating(false)
     }

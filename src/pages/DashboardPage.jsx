@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Search, Filter, BookOpen, Users, PlayCircle, Sparkles } from 'lucide-react'
@@ -8,6 +8,8 @@ import { parseYoutubeUrl } from '../lib/youtube.js'
 import { usePlaylistCounts } from '../hooks/usePlaylistCounts.js'
 import { PlaylistCard } from '../components/PlaylistCard.jsx'
 import { Spinner } from '../components/Spinner.jsx'
+import { collection, doc, getDocs, updateDoc, deleteDoc, addDoc, query as firebaseQuery, orderBy } from 'firebase/firestore'
+import { db, firebaseReady } from '../lib/firebase.js'
 
 function uniqSorted(arr) {
   return Array.from(new Set(arr.filter(Boolean))).sort((a, b) => a.localeCompare(b))
@@ -17,6 +19,38 @@ export function DashboardPage() {
   const [query, setQuery] = useState('')
   const [courseFilter, setCourseFilter] = useState('All')
   const [facultyFilter, setFacultyFilter] = useState('All')
+  const [approvedPlaylists, setApprovedPlaylists] = useState([])
+  const [loadingApproved, setLoadingApproved] = useState(false)
+
+  // Load approved playlists from Firebase
+  useEffect(() => {
+    const loadApprovedPlaylists = async () => {
+      if (!firebaseReady || !db) {
+        console.log('🔥 Firebase not ready, skipping approved playlists load')
+        return
+      }
+      
+      setLoadingApproved(true)
+      try {
+        console.log('🔄 Loading approved playlists from Firebase...')
+        const q = firebaseQuery(collection(db, 'approvedPlaylists'), orderBy('approvedAt', 'desc'))
+        const snapshot = await getDocs(q)
+        const data = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        console.log('✅ Loaded approved playlists:', data.length, 'playlists')
+        console.log('📝 Approved playlists data:', data)
+        setApprovedPlaylists(data)
+      } catch (error) {
+        console.error('❌ Error loading approved playlists:', error)
+      } finally {
+        setLoadingApproved(false)
+      }
+    }
+
+    loadApprovedPlaylists()
+  }, [])
 
   const courses = useMemo(() => uniqSorted(COURSES.map((c) => c.code)), [])
   const courseTitleByCode = useMemo(() => {
@@ -25,21 +59,43 @@ export function DashboardPage() {
     return map
   }, [])
   const faculties = useMemo(
-    () => uniqSorted(PLAYLISTS.map((p) => `${p.facultyInitials} — ${p.facultyName}`)),
-    [],
+    () => uniqSorted([
+      ...PLAYLISTS.map((p) => `${p.facultyInitials} — ${p.facultyName}`),
+      ...approvedPlaylists.map((p) => `${p.facultyInitials} — ${p.facultyName}`)
+    ]),
+    [approvedPlaylists],
   )
 
   const enriched = useMemo(() => {
-    return PLAYLISTS.map((p) => {
+    // Combine static playlists with Firebase-approved playlists
+    console.log('🔗 Combining playlists...')
+    console.log('📚 Static playlists:', PLAYLISTS.length)
+    console.log('🔥 Approved playlists:', approvedPlaylists.length)
+    
+    const allPlaylists = [
+      ...PLAYLISTS,
+      ...approvedPlaylists.map(p => ({
+        course: p.course,
+        playlistUrl: p.playlistUrl,
+        facultyInitials: p.facultyInitials,
+        facultyName: p.facultyName,
+        addedAt: p.addedAt,
+        isFromFirebase: true,
+        firebaseId: p.id
+      }))
+    ]
+    
+    console.log('📊 Total combined playlists:', allPlaylists.length)
+    
+    return allPlaylists.map((p) => {
       const parsed = parseYoutubeUrl(p.playlistUrl)
       return {
         ...p,
-        playlistId: parsed?.playlistId ?? null,
-        title: `${p.course} — ${p.facultyInitials}`,
+        playlistId: parsed?.videoId,
         facultyKey: `${p.facultyInitials} — ${p.facultyName}`,
       }
     })
-  }, [])
+  }, [approvedPlaylists])
 
   const playlistIds = useMemo(() => enriched.map((p) => p.playlistId).filter(Boolean), [enriched])
   const { counts, loading: countsLoading, enabled: countsEnabled } = usePlaylistCounts(playlistIds)
